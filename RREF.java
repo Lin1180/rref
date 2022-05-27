@@ -4,7 +4,7 @@ import java.util.Scanner;
 class RREF
 {
 	int column = 0;
-	int row = 0;		//¾î¦C[1 1 1 1] = 4
+	int row = 0;
 	
 	public void cursorEntry(double [][] matrix, int currRow)
 	{
@@ -12,7 +12,6 @@ class RREF
 		{
 			for(int i = currRow; i < matrix.length - 1; i++)
 			{
-				
 				if(matrix[i][currRow] == 0 && matrix[i + 1][currRow] != 0)
 				{
 					for(int j = 0; j < matrix[currRow].length; j++)
@@ -20,11 +19,9 @@ class RREF
 						double temp = matrix[i][j];
 						matrix[i][j] = matrix[i + 1][j];
 						matrix[i + 1][j] = temp;
-						
 					}
 					break;
 				}
-				
 			}
 			
 			if(matrix[currRow][currRow] == 0)
@@ -54,12 +51,8 @@ class RREF
 					double temp = matrix[tempRow][i];
 					matrix[tempRow][i] = matrix[currRow][i];
 					matrix[currRow][i] = temp;
-					
 				}
-				
 			}
-			
-			
 		}
 	}
 	
@@ -107,7 +100,6 @@ class RREF
 						for(int j = i + 1; j < matrix[currRow].length; j++)
 						{
 							matrix[currRow][j] /= temp;
-							
 						}
 						break;
 					}
@@ -132,7 +124,6 @@ class RREF
 						for(int j = currRow; j < matrix[currRow].length; j++)
 						{
 							matrix[i][j] -= matrix[currRow][j] * temp;
-							
 						}
 						
 					}
@@ -155,7 +146,6 @@ class RREF
 				{
 					for(int i = 0; i < matrix.length; i++)
 					{
-						//System.out.println(matrix.length);
 						if(matrix[i][tempC] != 0 && i != currRow)
 						{
 							//System.out.println(matrix[i + 1][currRow]);
@@ -165,12 +155,10 @@ class RREF
 								matrix[i][j] -= matrix[currRow][j] * temp;
 								
 							}
-							
 						}
 					}
 				}
 			}
 		}
 	}
-	
 }
